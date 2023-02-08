@@ -4,6 +4,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        Random randomGenerator = new Random();
+        int number = randomGenerator.Next(1, 101);
+
+        List<string> verses = new List<string>
+        {
+            "and it came to pass",
+            "Jesus Wept",
+            "The end."
+        };
+
+        Scripture scrip = new Scripture(verses);
+        scrip.Display();
+        scrip.HideWords(3);
     }
 }
