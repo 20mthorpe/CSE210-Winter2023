@@ -2,33 +2,31 @@
 using System;
 class Entry
 {
-
-    List<string> _entries = new List<string>();
-    public string GetDate()
+    public string name;
+    public string date;
+    public string response;
+    public void GetDate()
     {
         Console.Write("What is the date? ");
-        string date = Console.ReadLine();
-        _entries.Add(date);
-        return date;
+        date = Console.ReadLine();
     }
-    public string GetName()
+    public void GetName()
     {
         Console.Write("What is your name? ");
-        string name = Console.ReadLine(); 
-        _entries.Add(name);
-        return name;
+        name = Console.ReadLine(); 
     }
-    public string GetResponse()
+    public void GetResponse()
     {
         Prompt prompt1 = new Prompt();
         prompt1.DisplayRandomPrompt();
-        string writtenEntry = Console.ReadLine();
-        _entries.Add(writtenEntry);
-        return writtenEntry;
+        response = Console.ReadLine();
+        
     }
     public void Display()
     {
-        Console.WriteLine(_entries);
+        Console.WriteLine(name);
+        Console.WriteLine(date);
+        Console.WriteLine(response); 
     }
 
 }
