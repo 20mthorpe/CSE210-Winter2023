@@ -21,24 +21,27 @@ class Scripture
         }
     }
 
-    public bool HideWords()
+    public bool HideWords(int numberWordsClear)
     {
-        foreach (Verse v in _verses){
+        foreach (int value in Enumerable.Range(1, numberWordsClear)){
 
             Random random = new Random();
-            int randomIndex = random.Next((v._words).Count);
-            v._words[randomIndex] = HideWord();
+            Verse v = new Verse();
+            int randomIndex = random.Next((v._words).Count());
+            v = _verses[randomIndex];
         }
     }
 
     public bool IsAllHidden()
     {
+
         // while not all is hidden
-        foreach(Verse verse in _verses){
-            if verse(IsAllHidden()){
-                
+        foreach(Verse v in _verses){
+            if (v.IsAllHidden() == false){
+                return false;
             }
         }
+        return true;
     }
 
 }
