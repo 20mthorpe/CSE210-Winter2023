@@ -42,7 +42,7 @@ class Verse
     }
 
     public int GetCount(){
-        count = _words.Count;
+        count = _words.Count();
         return count;
     }
 
