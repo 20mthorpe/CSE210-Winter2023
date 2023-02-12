@@ -2,7 +2,7 @@ using System;
 
 class Scripture
 {
-    private List<Verse> _verses = new List<Verse>();
+    public List<Verse> _verses = new List<Verse>();
 
     public Scripture(List<string> verses)
     {
@@ -21,14 +21,24 @@ class Scripture
         }
     }
 
-    public bool HideWords(int count)
+    public bool HideWords()
     {
+        foreach (Verse v in _verses){
 
+            Random random = new Random();
+            int randomIndex = random.Next((v._words).Count);
+            v._words[randomIndex] = HideWord();
+        }
     }
 
     public bool IsAllHidden()
     {
         // while not all is hidden
+        foreach(Verse verse in _verses){
+            if verse(IsAllHidden()){
+                
+            }
+        }
     }
 
 }
