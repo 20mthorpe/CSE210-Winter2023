@@ -1,7 +1,3 @@
-using System;
-
-// EXCEEDING REQUIREMENTS: 
-
 class Program
 {
     static void Main(string[] args)
@@ -19,8 +15,8 @@ class Program
         Scripture scrip = new Scripture(verses);
         scrip.Display();
 
-        foreach (Verse verse in scrip._verses){
-            scrip.HideWords(verse.GetCount());
+        foreach (Verse v in scrip._verses){
+            scrip.HideWords(v.GetCount());
         }
     }
     static void ClearConsole(){

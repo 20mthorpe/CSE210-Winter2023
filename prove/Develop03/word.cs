@@ -3,7 +3,7 @@ using System;
 class Word
 {
     private String _text = "";
-    private bool _hidden = true;
+    public bool _hidden;
 
     public Word(string text)
     {
@@ -14,14 +14,16 @@ class Word
     {
         if (_hidden)
         {
-
             foreach(char c in _text)
             {
                 Console.Write("_");
             }
-                
         } else {
             System.Console.Write(_text);
         }
+    }
+
+    public void HideWord(){
+        _hidden = true;
     }
 }
