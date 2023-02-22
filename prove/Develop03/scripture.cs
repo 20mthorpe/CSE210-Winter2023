@@ -26,7 +26,7 @@ class Scripture
         foreach (int value in Enumerable.Range(1, numberWordsClear)){
 
             Random random = new Random();
-            Verse v = new Verse(verseStr);
+            Verse v = new Verse();
             int randomIndex = random.Next((v._words).Count());
             v = _verses[randomIndex];
         }

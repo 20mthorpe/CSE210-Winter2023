@@ -45,7 +45,10 @@ class Verse
         count = _words.Count();
         return count;
     }
-
+    public void HideWord(){
+        Word w = new Word();
+        w.HideWord();
+    }
     public bool IsAllHidden()
     {
         List<string> hiddenList = new List<string>();
