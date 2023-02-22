@@ -5,6 +5,10 @@ class ReflectingActivity : Activity
     private string _prompt;
     private string _promptQuestion;
 
+    public ReflectingActivity(string name, string description, int duration) : base(name, description, duration)
+    {
+
+    }
     public void GetRandomPrompt()
     {
         _prompt = ("This is a random prompt for now");
