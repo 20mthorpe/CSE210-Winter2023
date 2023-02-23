@@ -14,18 +14,23 @@ class Activity
     }
     public void SetDuration()
     {
-        System.Console.WriteLine("What is the Duration of the activity? ");
+        System.Console.WriteLine("What is the Duration of the activity (in seconds)? ");
         string durationString = System.Console.ReadLine();
         int duration = Int32.Parse(durationString);
         _duration = duration;
     }
+    public void DisplayDiscription()
+    {
+        System.Console.WriteLine(_description);
+    }
     public void DisplayStart()
     {
-        System.Console.WriteLine("We are now beginning a Mindfulness Activity. ");
+        System.Console.WriteLine($"Welcome to the {_name}. ");
     }
     public void DisplayEnd()
     {
-        System.Console.WriteLine("We have now concluded a Mindfulness Activity. ");
+        System.Console.WriteLine("Well done! ");
+        System.Console.WriteLine($"You have completed {_duration} seconds of the {_name}");
     }
     public void Pause()
     {
