@@ -24,7 +24,7 @@ class Program
             option = GetMenuOption();
 
             if (option == "1"){
-                BreathingActivity breathe = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", 10);
+                BreathingActivity breathe = new BreathingActivity(30);
                 breathe.DisplayStart();
                 breathe.SetDuration();
                 breathe.DisplayDiscription();
@@ -34,7 +34,7 @@ class Program
             }
 
             else if (option == "2"){
-                ListeningActivity listen = new ListeningActivity("Listening Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 10);
+                ListeningActivity listen = new ListeningActivity(30);
                 listen.SetDuration();
                 listen.DisplayStart();
                 listen.SetDuration();
@@ -45,7 +45,7 @@ class Program
             }
 
             else if (option == "3"){
-                ReflectingActivity reflect = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", 10);
+                ReflectingActivity reflect = new ReflectingActivity(30);
                 reflect.SetDuration();
                 reflect.DisplayStart();
                 reflect.SetDuration();
