@@ -6,7 +6,7 @@ class Activity
     private string _description = "";
     //private string _welcomeMessage = $"Welcome to the {_name}. ";
     //private string _endMessage = $"You have completed {_duration} seconds of the {_name}";
-    private int _duration = 0;
+    protected int _duration = 0;
 
     public Activity(string name, string description, int duration)
     {
@@ -16,7 +16,7 @@ class Activity
     }
     public void SetDuration()
     {
-        System.Console.WriteLine("What is the Duration of the activity (in seconds)? ");
+        System.Console.Write("How long, in seconds, would you like for your session? ");
         string durationString = System.Console.ReadLine();
         int duration = Int32.Parse(durationString);
         _duration = duration;
@@ -36,9 +36,37 @@ class Activity
         System.Console.WriteLine($"You have completed {_duration} seconds of the {_name}");
         //System.Console.WriteLine(_endMessage);
     }
-    public void Pause()
+    public void BeginningPause()
     {
+        System.Console.WriteLine("Get ready...");
+        DisplayDelay(3);
+    }
+    public void DisplayDelay(int delay)
+    {
+        double time = delay;
+        while (time > 0)
+        {
+            System.Console.Write("/");
+            Thread.Sleep(500);//milliseconds
+            time -= .5;//seconds
+            System.Console.Write("\b \b");
 
+            System.Console.Write("-");
+            Thread.Sleep(500);//milliseconds
+            time -= .5;//seconds
+            System.Console.Write("\b \b");
+
+            System.Console.Write("\\");
+            Thread.Sleep(500);//milliseconds
+            time -= .5;//seconds
+            System.Console.Write("\b \b");
+
+            System.Console.Write("|");
+            Thread.Sleep(500);//milliseconds
+            time -= .5;//seconds
+            System.Console.Write("\b \b");
+
+        }
     }
     public void CountdownTimer()
     {

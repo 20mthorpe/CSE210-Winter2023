@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
 
-        static string GetMenuOption()
+        string GetMenuOption()
         {
             System.Console.WriteLine("Menu Options: ");
             System.Console.WriteLine("1. Breathing Activity");
@@ -25,34 +25,54 @@ class Program
 
             if (option == "1"){
                 BreathingActivity breathe = new BreathingActivity(30);
+                
                 breathe.DisplayStart();
-                breathe.SetDuration();
+                System.Console.WriteLine();
+
                 breathe.DisplayDiscription();
-                // display countdown does not yet work
+                System.Console.WriteLine();
+
+                breathe.SetDuration();
+
+                breathe.BeginningPause();
+
                 breathe.DisplayCountdown();
+
+                System.Console.WriteLine();
                 breathe.DisplayEnd();
+                System.Console.WriteLine();
             }
 
             else if (option == "2"){
                 ListeningActivity listen = new ListeningActivity(30);
-                listen.SetDuration();
+                
                 listen.DisplayStart();
-                listen.SetDuration();
+                System.Console.WriteLine();
+
                 listen.DisplayDiscription();
+                System.Console.WriteLine();
+
+                listen.SetDuration();
                 // add in specific functionality for this activity
 
                 listen.DisplayEnd();
+                System.Console.WriteLine();
             }
 
             else if (option == "3"){
                 ReflectingActivity reflect = new ReflectingActivity(30);
-                reflect.SetDuration();
+                
                 reflect.DisplayStart();
-                reflect.SetDuration();
+                System.Console.WriteLine();
+
                 reflect.DisplayDiscription();
+                System.Console.WriteLine();
+
+                reflect.SetDuration();
                 // add in specific functionality for this activity
 
                 reflect.DisplayEnd();
+                System.Console.WriteLine();
             }
             
             else if (option == "4")
