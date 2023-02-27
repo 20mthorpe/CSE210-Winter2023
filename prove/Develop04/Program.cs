@@ -36,10 +36,12 @@ class Program
 
                 breathe.BeginningPause();
 
+                // this is the breathe specific task
                 breathe.DisplayCountdown();
 
                 System.Console.WriteLine();
                 breathe.DisplayEnd();
+                breathe.DisplayDelay(3);
                 System.Console.WriteLine();
             }
 
@@ -53,9 +55,14 @@ class Program
                 System.Console.WriteLine();
 
                 listen.SetDuration();
-                // add in specific functionality for this activity
 
+                listen.BeginningPause();
+
+                // This is the listen specific task
+
+                System.Console.WriteLine();
                 listen.DisplayEnd();
+                listen.DisplayDelay(3);
                 System.Console.WriteLine();
             }
 
@@ -69,9 +76,19 @@ class Program
                 System.Console.WriteLine();
 
                 reflect.SetDuration();
-                // add in specific functionality for this activity
 
+                // this is the reflection specific task
+                System.Console.WriteLine("Consider the following prompt:");
+                reflect.DisplayPrompt();
+                System.Console.WriteLine("When you have something in mind, press enter to continue.");
+                System.Console.ReadLine();
+                reflect.BeginningPause();
+                reflect.DisplayPromptQuestion();
+
+
+                System.Console.WriteLine();
                 reflect.DisplayEnd();
+                reflect.DisplayDelay(3);
                 System.Console.WriteLine();
             }
             

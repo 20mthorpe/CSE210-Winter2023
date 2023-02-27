@@ -65,7 +65,6 @@ class Activity
             Thread.Sleep(500);//milliseconds
             time -= .5;//seconds
             System.Console.Write("\b \b");
-
         }
     }
     public void CountdownTimer()
