@@ -21,6 +21,10 @@ class Activity
         int duration = Int32.Parse(durationString);
         _duration = duration;
     }
+    public int GetDuration()
+    {
+        return _duration;
+    }
     public void DisplayDiscription()
     {
         System.Console.WriteLine(_description);

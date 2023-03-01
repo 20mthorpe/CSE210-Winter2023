@@ -59,6 +59,10 @@ class Program
                 listen.BeginningPause();
 
                 // This is the listen specific task
+                listen.SetRandomPrompt();
+                listen.DisplayRandomPrompt();
+                listen.GetItems();
+                listen.DisplayItemAmount();
 
                 System.Console.WriteLine();
                 listen.DisplayEnd();
@@ -78,13 +82,16 @@ class Program
                 reflect.SetDuration();
 
                 // this is the reflection specific task
+                System.Console.WriteLine();
                 System.Console.WriteLine("Consider the following prompt:");
+                reflect.SetRandomPrompt();
                 reflect.DisplayPrompt();
                 System.Console.WriteLine("When you have something in mind, press enter to continue.");
                 System.Console.ReadLine();
                 reflect.BeginningPause();
+                reflect.SetPromptQuestion();
                 reflect.DisplayPromptQuestion();
-
+                reflect.DisplayDelay(reflect.GetDuration());
 
                 System.Console.WriteLine();
                 reflect.DisplayEnd();
