@@ -11,7 +11,8 @@ class Program
             System.Console.WriteLine("1. Breathing Activity");
             System.Console.WriteLine("2. Listening Activity");
             System.Console.WriteLine("3. Reflection Activity");
-            System.Console.WriteLine("4. Quit");
+            System.Console.WriteLine("4. Body Scan Activity");
+            System.Console.WriteLine("5. Quit");
             System.Console.WriteLine("Select a choice from the menu: ");
             string option = System.Console.ReadLine();
             return option;
@@ -98,8 +99,28 @@ class Program
                 reflect.DisplayDelay(3);
                 System.Console.WriteLine();
             }
+
+            else if (option == "4"){
+                BodyScanActivity body = new BodyScanActivity(30);
+                
+                body.DisplayStart();
+                System.Console.WriteLine();
+
+                body.DisplayDiscription();
+                System.Console.WriteLine();
+
+                body.SetDuration();
+
+                // this is the reflection specific task
+                body.RunScan();
+
+                System.Console.WriteLine();
+                body.DisplayEnd();
+                body.DisplayDelay(3);
+                System.Console.WriteLine();
+            }
             
-            else if (option == "4")
+            else if (option == "5")
             {
                 System.Console.WriteLine("The end:)");
             }
