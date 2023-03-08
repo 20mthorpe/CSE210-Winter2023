@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
 
         string option = "-1";
 
@@ -32,15 +31,15 @@ class Program
 
                 if (goalType == "1")
                 {
-
+                    System.Console.WriteLine("Create a simple goal here");
                 }
                 else if (goalType == "2")
                 {
-
+                    System.Console.WriteLine("Create an eternal goal here");
                 }
                 else if (goalType == "3")
                 {
-
+                    System.Console.WriteLine("Create a checklist goal here");
                 }
                 else
                 {
