@@ -16,6 +16,10 @@ abstract class Goal
     {
         return _points;
     }
+    public string GetDesc()
+    {
+        return _desc;
+    }
     public bool GetComplete()
     {
         return _isComplete;

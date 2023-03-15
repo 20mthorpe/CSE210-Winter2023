@@ -17,4 +17,16 @@ class ChecklistGoal : Goal
     {
         _timesCompleted++;
     }
+    public int GetTimesCompleted()
+    {
+        return _timesCompleted;
+    }
+    public int GetTimesToCompletion()
+    {
+        return _numToCompletion;
+    }
+    public int GetBonusPoints()
+    {
+        return _bonusPoints;
+    }
 }
