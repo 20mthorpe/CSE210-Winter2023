@@ -1,13 +1,30 @@
-class Goal
+abstract class Goal
 {
-    private int _points;
-    private string _name;
-    private string _desc;
+    protected int _points;
+    protected string _name;
+    protected string _desc;
     private bool _isComplete;
     public Goal()
     {
 
     }
+    public string GetName()
+    {
+        return _name;
+    }
+    public int GetPoints()
+    {
+        return _points;
+    }
+    public bool GetComplete()
+    {
+        return _isComplete;
+    }
+    public void CompleteEvent()
+    {
+        _isComplete = true;
+    }
+    
     public Goal(int points, string name, string description, bool isComplete)
     {
         _points = points;
@@ -15,20 +32,9 @@ class Goal
         _desc = description;
         _isComplete = isComplete;
     }
-    public void SetPoints(int points)
+    virtual public void DisplayGoal()
     {
-        _points = points;
+        System.Console.WriteLine($"{_name} ({_desc})");
     }
-    public void SetDescription(string desc)
-    {
-        _desc = desc;
-    }
-    public void SetName(string name)
-    {
-        _name = name;
-    }
-    public void SetCompetion(bool isComplete)
-    {
-        _isComplete = isComplete;
-    }
+
 }
