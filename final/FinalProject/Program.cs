@@ -14,7 +14,7 @@ class Program
         gryf_colors.Add("Scarlet");
         gryf_colors.Add("Gold");
 
-        House gryffindor = new House("Gryffindor", "Lion", "Fat Lady in the Pink Dress", gryf_values, gryf_colors);
+        House gryffindor = new House("Gryffindor", "Lion", "Fat Lady in the Pink Dress", gryf_values, gryf_colors, "Nearly Headless Nick", "Godric Gryffindor");
 
         List<string> raven_values = new List<string>();
         raven_values.Add("Wit");
@@ -24,7 +24,7 @@ class Program
         raven_colors.Add("Blue");
         raven_colors.Add("Bronze");
 
-        House ravenclaw = new House("Ravenclaw", "Eagle", "Door of Riddles", raven_values, raven_colors);
+        House ravenclaw = new House("Ravenclaw", "Eagle", "Door of Riddles", raven_values, raven_colors, "The Grey Lady", "Rowena Ravenclaw");
 
         List<string> huff_values = new List<string>();
         huff_values.Add("Loyalty");
@@ -34,7 +34,7 @@ class Program
         huff_colors.Add("Yellow");
         huff_colors.Add("Black");
 
-        House hufflepuff = new House("Hufflepuff", "Badger", "Barrel near the Kitchens", huff_values, huff_colors);
+        House hufflepuff = new House("Hufflepuff", "Badger", "Barrel near the Kitchens", huff_values, huff_colors, "The Fat Friar", "Helga Hufflepuff");
 
         List<string> slyth_values = new List<string>();
         slyth_values.Add("Cunning");
@@ -44,7 +44,7 @@ class Program
         slyth_colors.Add("Green");
         slyth_colors.Add("Silver");
 
-        House slytherin = new House("Slytherin", "Snake", "Stone wall in the Dungeons", slyth_values, slyth_colors);
+        House slytherin = new House("Slytherin", "Snake", "Stone wall in the Dungeons", slyth_values, slyth_colors, "The Bloody Baron", "Salazar Slytherin");
 
         List<House> houses = new List<House>();
         houses.Add(gryffindor);
@@ -54,7 +54,7 @@ class Program
 
         School hogwarts = new School("Hogwarts", "Draco Dormiens Nunquam Titillandus", houses);
 
-        
+
 
     }
 }
