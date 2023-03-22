@@ -14,7 +14,7 @@ class Program
         gryf_colors.Add("Scarlet");
         gryf_colors.Add("Gold");
 
-        House gryffindor = new House("Gryffindor", "Lion", "Fat Lady in the Pink Dress", gryf_values, gryf_colors, "Nearly Headless Nick", "Godric Gryffindor");
+        House gryffindor = new House("Gryffindor", "Lion", "Portrait of a Fat Lady in a Pink Dress", gryf_values, gryf_colors, "Nearly Headless Nick", "Godric Gryffindor");
 
         List<string> raven_values = new List<string>();
         raven_values.Add("Wit");

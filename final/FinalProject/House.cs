@@ -19,4 +19,18 @@ class House
         _founder = founder;
     }
 
+    public void DisplayHouseInfo()
+    {
+        System.Console.WriteLine();
+        System.Console.WriteLine($"The house you are in is {_name}.");
+        System.Console.WriteLine($"{_name} very highly values the traits of {_values[0]} and {_values[1]}.");
+        System.Console.WriteLine($"The {_name} House colors are {_colors[0]} and {_colors[1]}.");
+        System.Console.WriteLine($"The mascot for the {_name} House is a {_mascot}.");
+        System.Console.WriteLine($"Your common room can be found through a {_commonRoomEntrance}.");
+        System.Console.WriteLine($"The founder of the {_name} house was {_founder}.");
+        System.Console.WriteLine($"You also have a house ghost! They go by the title of {_ghost}.");
+        System.Console.WriteLine($"There's a brief summary of the {_name} house!");
+        System.Console.WriteLine();
+    }
+
 }
