@@ -32,5 +32,9 @@ class House
         System.Console.WriteLine($"There's a brief summary of the {_name} house!");
         System.Console.WriteLine();
     }
+    public string GetHouseName()
+    {
+        return _name;
+    }
 
 }
