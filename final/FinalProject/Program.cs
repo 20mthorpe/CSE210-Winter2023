@@ -117,7 +117,107 @@ class Program
         // Create the student!
         Student s1 = new Student(student_name, student_year, student_house);
 
-        System.Console.WriteLine("Great! You are now in the system! ");
+        System.Console.WriteLine($"Great! You are now in the system!\n");
+
+        // Get pet info and add it to the student
+        System.Console.WriteLine("We wanted to ask you a few more questions about you to include in our records. ");
+        System.Console.Write($"First, will you be bringing a pet with you to {hogwarts.GetSchoolName()}?(y/n) ");
+        string has_pet = "x";
+
+        while(has_pet != "y" || has_pet != "n")
+        {
+            System.Console.Write($"First, will you be bringing a pet with you to {hogwarts.GetSchoolName()}?(y/n) ");
+            has_pet = System.Console.ReadLine();
+
+            if(has_pet == "y")
+            {
+                string pet_type = "0";
+                while(pet_type != "1" || pet_type != "2" || pet_type != "3")
+                {
+                    System.Console.WriteLine($"Great! You have three options for pets:\n1. Owl\n2. Cat\n3. Toad\n");
+                    System.Console.Write("Which one would you like? (please enter the number) ");
+                    pet_type = System.Console.ReadLine();
+
+                    // Create an Owl and add to student
+                    if(pet_type == "1")
+                    {
+                        System.Console.Write("\nWhat is the name of your owl? ");
+                        string owl_name = System.Console.ReadLine();
+                        System.Console.Write("What color feathers does your owl have? ");
+                        string feather_color = System.Console.ReadLine();
+                        Owl s1_owl = new Owl(owl_name, feather_color);
+                        s1.SetPet(s1_owl);
+                    }
+
+                    // Create a Cat and add to student
+                    else if(pet_type == "2")
+                    {
+                        System.Console.Write("\nWhat is the name of your cat? ");
+                        string cat_name = System.Console.ReadLine();
+                        System.Console.Write("What color fur does your cat have? ");
+                        string fur_color = System.Console.ReadLine();
+                        Cat s1_cat = new Cat(fur_color, cat_name);
+                        s1.SetPet(s1_cat);
+                    }
+
+                    // Create a Toad and add to student
+                    else if(pet_type == "3")
+                    {
+                        System.Console.Write("\nWhat is the name of your toad? ");
+                        string toad_name = System.Console.ReadLine();
+                        System.Console.Write("Is your toad spotted?(y/n) ");
+                        string str_is_spotted = System.Console.ReadLine();
+                        bool is_spotted;
+                        if(str_is_spotted == "y")
+                        {
+                            is_spotted = true;
+                        }
+                        else if(str_is_spotted == "n")
+                        {
+                            is_spotted = false;
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("Invalid entry. We will assume your toad is spotted. ");
+                            is_spotted = true;
+                        }
+                        Toad s1_toad = new Toad(is_spotted, toad_name);
+                        s1.SetPet(s1_toad);
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("That was not one of the animal options. Please try again, and this time enter 1 2 or 3 only.");
+                    }
+                } 
+            }
+            else if(has_pet == "n")
+            {
+                System.Console.WriteLine("Okay, we'll continue forward then. ");
+            }
+            else
+            {
+                System.Console.WriteLine("That wasn't one of the options. Please type y or n only.");
+            }
+        }
+
+        // Get wand attributes and create a wand
+        System.Console.WriteLine($"\nWe would also like to know about your wand.");
+        System.Console.WriteLine("Each wand is unique and has unique attributes. Please, tell us about your wand. ");
+        System.Console.Write("What type of wood is your wand made of? ");
+        string wand_wood = System.Console.ReadLine();
+        System.Console.Write("What is the core of your wand made of? ");
+        string wand_core = System.Console.ReadLine();
+        System.Console.Write("What is the length of your wand? ");
+        string wand_length = System.Console.ReadLine();
+        System.Console.Write("What is the flexibility of your wand? ");
+        string wand_flex = System.Console.ReadLine();
+
+        Wand s1_wand = new Wand(wand_wood, wand_core, wand_length, wand_flex);
+        s1.SetWand(s1_wand);
+
+        System.Console.WriteLine($"\nGreat! We have all the wand information we need! Your wand info has been added to your account.");
+
+        System.Console.WriteLine($"\n\nCongratulations, your general setup is complete!");
 
     }
 }
