@@ -60,23 +60,26 @@ class Program
 
 
         // Start the adventure
+        System.Console.WriteLine();
         System.Console.WriteLine($"Welcome to your {hogwarts.GetSchoolName()} experience!! We are excited for you to start school this semester!");
         System.Console.WriteLine("Since this is your first year, we'll need to gather some information about you to get you registered! ");
-        System.Console.WriteLine("Before we get started, would you like to learn a little bit about the school?(y/n) ");
+        System.Console.Write("Before we get started, would you like to learn a little bit about the school?(y/n) ");
         string learn = System.Console.ReadLine();
+        System.Console.WriteLine();
 
         if (learn == "y")
         {
-            System.Console.WriteLine("Okay, here's some general information about the school! ");
+            System.Console.WriteLine("Okay, here's some general information about the school!\n");
             hogwarts.DisplaySchoolInfo();
+            System.Console.WriteLine();
         }
         else if (learn == "n")
         {
-            System.Console.WriteLine("In that case, let's continue on! ");
+            System.Console.WriteLine("In that case, let's continue on!\n");
         }
         else
         {
-            System.Console.WriteLine("That wasn't one of the options... let's just continue along anyway.");
+            System.Console.WriteLine("That wasn't one of the options... let's just continue along anyway.\n");
         }
 
         // Get student info so that we can create a new student
@@ -87,7 +90,7 @@ class Program
 
         // Next get the year (keep looping until they enter something between 1 and 7)
         int student_year = -1;
-        while(0 >= student_year || student_year <= 8)
+        while(0 >= student_year || student_year >= 8)
         {
             System.Console.WriteLine("We also need to know what year you will be starting school!");
             System.Console.Write($"{hogwarts.GetSchoolName()} offers school for years 1-7. Please type in which year you will be starting out at: ");
@@ -98,15 +101,16 @@ class Program
         // Last get their chosen house
         System.Console.WriteLine("Excellent! Just one more thing before we can add you to the system.");
         System.Console.WriteLine("We need to know which house you would like to join! Keep in mind, this cannot be changed.");
-        System.Console.WriteLine($"Your house will be your home and family for all your years at {hogwarts.GetSchoolName}.");
+        System.Console.WriteLine($"Your house will be your home and family for all your years at {hogwarts.GetSchoolName()}.");
 
         System.Console.WriteLine($"The houses you can chose from are: ");
-        System.Console.WriteLine($"{hogwarts.DisplayHouseNames}");
+        hogwarts.DisplayHouseNames();
 
         System.Console.Write("Please type in the number of the house you would like to join: ");
         int stud_house_index = -1;
         string str_stud_house_index = System.Console.ReadLine();
         stud_house_index = Int32.Parse(str_stud_house_index);
+        stud_house_index --;
 
         House student_house = houses[stud_house_index];
 
