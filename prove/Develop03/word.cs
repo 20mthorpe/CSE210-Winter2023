@@ -9,7 +9,17 @@ class Word
     {
         _text = text;
     }
-
+    public bool IsHiddenW()
+    {
+        if (_hidden == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public void Display()
     {
         if (_hidden)
@@ -22,8 +32,7 @@ class Word
             System.Console.Write(_text);
         }
     }
-
-    public void HideWord(){
+    public void Hide(){
         _hidden = true;
     }
 }

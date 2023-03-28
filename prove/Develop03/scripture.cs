@@ -4,13 +4,9 @@ class Scripture
 {
     public List<Verse> _verses = new List<Verse>();
 
-    public Scripture(List<string> verses)
+    public Scripture(List<Verse> verses)
     {
-        foreach (string verseStr in verses)
-        {
-            Verse verse = new Verse(verseStr);
-            _verses.Add(verse);
-        }
+        _verses = verses;
     }
 
     public void Display()
@@ -21,23 +17,28 @@ class Scripture
         }
     }
 
-    public bool HideWords(int numberWordsClear)
+    public void HideWords(int numberWordsClear)
     {
-        foreach (int value in Enumerable.Range(1, numberWordsClear)){
-
-            Random random = new Random();
-            Verse v = new Verse();
-            int randomIndex = random.Next((v._words).Count());
-            v = _verses[randomIndex];
+        int i = 0;
+        while ((i<numberWordsClear) && (!IsAllHidden()))
+        {
+            //pick a random verse and set to v
+            Random rnd = new Random();
+            int rnd_verse = rnd.Next(_verses.Count());
+            //if v is not all hidden ask verse to hide a word
+            if (_verses[rnd_verse].IsAllHiddenV() == false)
+            {
+                _verses[rnd_verse].HideWord();
+                i++;
+            }
         }
     }
 
     public bool IsAllHidden()
     {
-
         // while not all is hidden
         foreach(Verse v in _verses){
-            if (v.IsAllHidden() == false){
+            if (v.IsAllHiddenV() == false){
                 return false;
             }
         }

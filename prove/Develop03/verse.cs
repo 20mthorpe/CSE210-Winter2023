@@ -5,8 +5,8 @@ class Verse
     public List<Word> _words = new List<Word>();
     private string _reference;
     private int count;
-    public Verse(string verse)
-    {
+    public Verse(string verse, string reference){
+        _reference = reference;
         char[] delimiterChars = {' ', ',', '.', ':', '\t'};
         string[] words = verse.Split(delimiterChars);
         foreach (string wordStr in words)
@@ -29,44 +29,34 @@ class Verse
         }
         System.Console.WriteLine(" ");
     }
-
-    public Verse(string verse, string reference){
-        _reference = reference;
-        char[] delimiterChars = {' ', ',', '.', ':', '\t'};
-        string[] words = verse.Split(delimiterChars);
-        foreach (string wordStr in words)
+    public void HideWord()
+    {
+        int i = 0;
+        while(i<1 && !IsAllHiddenV())
         {
-            Word word = new Word(wordStr);
-            _words.Add(word);
+            Random rnd = new Random();
+            int rndWord = rnd.Next(_words.Count());
+            if(!_words[rndWord].IsHiddenW())
+            {
+                _words[rndWord].Hide();
+                i ++;
+            }
         }
     }
-
     public int GetCount(){
         count = _words.Count();
         return count;
     }
-    public void HideWord(){
-        Word w = new Word();
-        w.HideWord();
-    }
-    public bool IsAllHidden()
+    public bool IsAllHiddenV()
     {
-        List<string> hiddenList = new List<string>();
-        // while not all is hidden
-        foreach(Word word in _words){
-            if (word._hidden == false){
-                hiddenList.Add("hidden");
-            }
-            else {
-                hiddenList.Add("Not hidden");
-            }
-        }
 
-        if (hiddenList.Contains("Not hidden")){
-            return false;
+        // while not all is hidden
+        foreach(Word word in _words)
+        {
+            if (word._hidden == false){
+                return false;
+            }
         }
-        else{
-            return true;
-        }
+        return true;
     }
 }
