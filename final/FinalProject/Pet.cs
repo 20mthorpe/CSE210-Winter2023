@@ -1,8 +1,8 @@
-class Pet
+abstract class Pet
 {
-    private string _name;
-    public Pet(string name)
-    {
-        _name = name;
-    }
+    protected string _name;
+    //public Pet(string name)
+    //{
+    //    _name = name;
+    //}
 }
