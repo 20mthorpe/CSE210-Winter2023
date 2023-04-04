@@ -21,10 +21,14 @@ class House
 
     public void DisplayHouseInfo()
     {
+        string value1 = _values[0];
+        string value2 = _values[1];
+        string color1 = _colors[0];
+        string color2 = _colors[1];
         System.Console.WriteLine();
         System.Console.WriteLine($"The house you are in is {_name}.");
-        System.Console.WriteLine($"{_name} very highly values the traits of {_values[0]} and {_values[1]}.");
-        System.Console.WriteLine($"The {_name} House colors are {_colors[0]} and {_colors[1]}.");
+        System.Console.WriteLine($"{_name} very highly values the traits of {value1} and {value2}.");
+        System.Console.WriteLine($"The {_name} House colors are {color1} and {color2}.");
         System.Console.WriteLine($"The mascot for the {_name} House is a {_mascot}.");
         System.Console.WriteLine($"Your common room can be found through a {_commonRoomEntrance}.");
         System.Console.WriteLine($"The founder of the {_name} house was {_founder}.");

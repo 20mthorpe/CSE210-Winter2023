@@ -19,7 +19,7 @@ class Program
         // Ravenclaw
         List<string> raven_values = new List<string>();
         raven_values.Add("Wit");
-        gryf_values.Add("Learning");
+        raven_values.Add("Learning");
 
         List<string> raven_colors = new List<string>();
         raven_colors.Add("Blue");
@@ -214,7 +214,7 @@ class Program
         string wand_wood = System.Console.ReadLine();
         System.Console.Write("What is the core of your wand made of? ");
         string wand_core = System.Console.ReadLine();
-        System.Console.Write("What is the length of your wand? ");
+        System.Console.Write("What is the length of your wand (in inches)? ");
         string wand_length = System.Console.ReadLine();
         System.Console.Write("What is the flexibility of your wand? ");
         string wand_flex = System.Console.ReadLine();
@@ -232,7 +232,7 @@ class Program
 
         while(menu_option != "q")
         {
-            System.Console.WriteLine("Type 'q' to quit and end the game.");
+            System.Console.WriteLine($"\nType 'q' to quit and end the game.");
             System.Console.WriteLine($"\n1. View General Student Information\n2. View Wand information\n3. View Pet information\n4. View House Information\n5. View School Information\n");
             System.Console.Write("Menu Option: ");
             menu_option = System.Console.ReadLine();
@@ -247,8 +247,15 @@ class Program
             }
             else if(menu_option == "3")
             {
-                Pet s1_pet = s1.GetPet();
-                s1_pet.DisplayPetInfo();
+                if(has_pet == "y")
+                {
+                    Pet s1_pet = s1.GetPet();
+                    s1_pet.DisplayPetInfo();
+                }
+                else
+                {
+                    System.Console.WriteLine("You decided not to bring a pet to school with you. ");
+                }
             }
             else if(menu_option == "4")
             {
@@ -259,7 +266,7 @@ class Program
             {
                 hogwarts.DisplaySchoolInfo();
             }
-            else
+            else if (menu_option != "q")
             {
                 System.Console.WriteLine($"That wasn't one of the menu options.\nPlease chose a number beetween 1 and 5, or type 'q'.");
             }
