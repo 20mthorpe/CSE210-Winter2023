@@ -6,4 +6,11 @@ class Owl:Pet
         _feathers = feathers;
         _name = name;
     }
+
+    public override void DisplayPetInfo()
+    {
+        System.Console.WriteLine("Your pet is an Owl!");
+        System.Console.WriteLine($"Their name is {_name}.");
+        System.Console.WriteLine($"Their feathers are {_feathers}.");
+    }
 }

@@ -99,7 +99,7 @@ class Program
         }
 
         // Last get their chosen house
-        System.Console.WriteLine("Excellent! Just one more thing before we can add you to the system.");
+        System.Console.WriteLine($"\nExcellent! Just one more thing before we can add you to the system.");
         System.Console.WriteLine("We need to know which house you would like to join! Keep in mind, this cannot be changed.");
         System.Console.WriteLine($"Your house will be your home and family for all your years at {hogwarts.GetSchoolName()}.");
 
@@ -121,10 +121,13 @@ class Program
 
         // Get pet info and add it to the student
         System.Console.WriteLine("We wanted to ask you a few more questions about you to include in our records. ");
-        System.Console.Write($"First, will you be bringing a pet with you to {hogwarts.GetSchoolName()}?(y/n) ");
+        //System.Console.Write($"First, will you be bringing a pet with you to {hogwarts.GetSchoolName()}?(y/n) ");
         string has_pet = "x";
+        List<string> to_have = new List<string>();
+        to_have.Add("y");
+        to_have.Add("n");
 
-        while(has_pet != "y" || has_pet != "n")
+        while(to_have.Contains(has_pet) == false)
         {
             System.Console.Write($"First, will you be bringing a pet with you to {hogwarts.GetSchoolName()}?(y/n) ");
             has_pet = System.Console.ReadLine();
@@ -132,7 +135,11 @@ class Program
             if(has_pet == "y")
             {
                 string pet_type = "0";
-                while(pet_type != "1" || pet_type != "2" || pet_type != "3")
+                List<string> possible = new List<string>();
+                possible.Add("1");
+                possible.Add("2");
+                possible.Add("3");
+                while(possible.Contains(pet_type) == false)
                 {
                     System.Console.WriteLine($"Great! You have three options for pets:\n1. Owl\n2. Cat\n3. Toad\n");
                     System.Console.Write("Which one would you like? (please enter the number) ");
@@ -218,6 +225,48 @@ class Program
         System.Console.WriteLine($"\nGreat! We have all the wand information we need! Your wand info has been added to your account.");
 
         System.Console.WriteLine($"\n\nCongratulations, your general setup is complete!");
+
+        System.Console.WriteLine($"\nNow that all the information is in the system, you can view your information.");
+        
+        string menu_option = "void";
+
+        while(menu_option != "q")
+        {
+            System.Console.WriteLine("Type 'q' to quit and end the game.");
+            System.Console.WriteLine($"\n1. View General Student Information\n2. View Wand information\n3. View Pet information\n4. View House Information\n5. View School Information\n");
+            System.Console.Write("Menu Option: ");
+            menu_option = System.Console.ReadLine();
+
+            if(menu_option == "1")
+            {
+                s1.DisplayStudentInfo();
+            }
+            else if(menu_option == "2")
+            {
+                s1_wand.DisplayWandInfo();
+            }
+            else if(menu_option == "3")
+            {
+                Pet s1_pet = s1.GetPet();
+                s1_pet.DisplayPetInfo();
+            }
+            else if(menu_option == "4")
+            {
+                House s1_house = s1.GetHouse();
+                s1_house.DisplayHouseInfo();
+            }
+            else if(menu_option == "5")
+            {
+                hogwarts.DisplaySchoolInfo();
+            }
+            else
+            {
+                System.Console.WriteLine($"That wasn't one of the menu options.\nPlease chose a number beetween 1 and 5, or type 'q'.");
+            }
+
+        }
+
+        System.Console.WriteLine("Goodbye! We hope you had fun!");
 
     }
 }

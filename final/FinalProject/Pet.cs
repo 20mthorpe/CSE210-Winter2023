@@ -5,4 +5,6 @@ abstract class Pet
     //{
     //    _name = name;
     //}
+
+    public abstract void DisplayPetInfo();
 }
